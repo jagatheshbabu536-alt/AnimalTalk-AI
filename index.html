@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07110f">
+  <meta name="description" content="AnimalTalk AI - dog and cat sound interpretation in Tamil.">
+  <title>AnimalTalk AI | Animal Sound Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="AnimalTalk AI home">
+      <span class="brand-icon">A<span>✦</span></span>
+      <span class="brand-name">AnimalTalk <b>AI</b><small>ANIMAL SOUND INTELLIGENCE</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="active" href="#home">Home</a><a href="#how-it-works">How it works</a><a href="#analyzer">Analyzer</a>
+    </nav>
+    <a class="header-cta" href="#analyzer">Start analysing <span>↗</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+  </header>
+
+  <main id="home">
+    <section class="hero-section">
+      <div class="hero-content">
+        <div class="eyebrow"><span class="eyebrow-line"></span> AI-POWERED ANIMAL SOUND INTERPRETATION</div>
+        <h1>அவற்றின் ஒலியை<br><span>தமிழில் புரிந்துகொள்.</span></h1>
+        <p class="hero-description">நாய் மற்றும் பூனையின் ஒலிகளை AI மூலம் ஆராய்ந்து, அதன் சாத்தியமான அர்த்தத்தை எளிய தமிழில் அறிந்துகொள்ளுங்கள்.</p>
+        <div class="hero-buttons">
+          <a class="primary-link" href="#analyzer">Start analysing <span>↗</span></a>
+          <a class="text-link" href="#how-it-works">எப்படி வேலை செய்கிறது? <span>↓</span></a>
+        </div>
+        <div class="hero-proof">
+          <div class="proof-avatars"><span>🐕</span><span>🐈</span></div>
+          <div><b>Dog + Cat audio</b><small>தமிழ் விளக்கம் · தமிழ் குரல்</small></div>
+          <span class="proof-divider"></span><span class="proof-tag"><i></i> AI ASSISTED</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="visual-glow"></div>
+        <div class="visual-image">
+          <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1000&q=85" alt="A friendly dog looking at the camera">
+          <div class="image-shade"></div>
+          <div class="visual-caption"><span class="caption-dot"></span><span><b>LISTEN. UNDERSTAND.</b><small>Every sound has a context.</small></span></div>
+        </div>
+        <div class="floating-card sound-card"><span class="sound-card-icon">♫</span><span><b>Audio intelligence</b><small>Sound pattern analysis</small></span><span class="sound-bars"><i></i><i></i><i></i><i></i><i></i></span></div>
+        <div class="floating-card language-card"><span class="language-icon">அ</span><span><b>Tamil output</b><small>Text + voice response</small></span></div>
+      </div>
+    </section>
+
+    <section class="stats-strip" aria-label="Project capabilities">
+      <div><span class="stat-icon">01</span><span><b>Two animal types</b><small>Dog & Cat</small></span></div>
+      <div><span class="stat-icon">02</span><span><b>AI audio analysis</b><small>Upload a sound clip</small></span></div>
+      <div><span class="stat-icon">03</span><span><b>Tamil explanation</b><small>Readable text output</small></span></div>
+      <div><span class="stat-icon">04</span><span><b>Voice playback</b><small>Listen in Tamil</small></span></div>
+    </section>
+
+    <section class="analyzer-section" id="analyzer">
+      <div class="section-heading">
+        <div><div class="eyebrow"><span class="eyebrow-line"></span> YOUR AI WORKSPACE</div><h2>Animal Sound <em>Analyzer</em></h2></div>
+        <p>ஒரு audio clip-ஐ upload செய்து AI விளக்கத்தைப் பெறுங்கள்.</p>
+      </div>
+      <div class="workspace">
+        <div class="panel upload-panel">
+          <div class="panel-topline"><span class="step-label">01 / INPUT</span><span class="panel-index">UPLOAD AUDIO</span></div>
+          <h3>விலங்கையும் ஒலியையும் தேர்வு செய்யவும்</h3>
+          <label class="field-label" for="animal">Select animal</label>
+          <div class="animal-select">
+            <label class="animal-option selected" data-animal="dog"><input type="radio" name="animal" value="dog" checked><span class="animal-emoji">🐕</span><span><b>நாய்</b><small>DOG</small></span><span class="check">✓</span></label>
+            <label class="animal-option" data-animal="cat"><input type="radio" name="animal" value="cat"><span class="animal-emoji">🐈</span><span><b>பூனை</b><small>CAT</small></span><span class="check">✓</span></label>
+          </div>
+          <label class="field-label">Upload animal audio</label>
+          <label class="dropzone" id="dropzone" for="audioFile">
+            <input id="audioFile" type="file" accept=".wav,.mp3,.m4a,.aac,.ogg,.flac,.webm,.aiff,audio/*">
+            <span class="upload-symbol">↑</span><strong>Drop your audio file here</strong>
+            <span class="drop-hint">or <u>browse files</u> from your device</span>
+            <span class="formats">WAV · MP3 · M4A · OGG · FLAC · WEBM · MAX 20 MB</span>
+          </label>
+          <div class="file-row" id="fileRow" hidden><span class="file-symbol">♫</span><span id="fileName">audio.mp3</span><button id="removeFile" type="button" aria-label="Remove file">×</button></div>
+          <button class="analyze-btn" id="analyzeBtn" type="button"><span>Analyse animal sound</span><b>↗</b></button>
+          <p class="privacy-note">🔒 Your audio is used only for this analysis request.</p>
+        </div>
+
+        <div class="panel result-panel">
+          <div class="panel-topline"><span class="step-label">02 / AI RESPONSE</span><span class="result-state" id="stateLabel">AWAITING AUDIO</span></div>
+          <h3>தமிழ் விளக்கம்</h3>
+          <div class="empty-state" id="emptyState"><div class="sound-orb"><span>♫</span></div><h4>உங்கள் முடிவு இங்கே தோன்றும்</h4><p>Audio upload செய்து analyse அழுத்துங்கள். AI உருவாக்கும் தமிழ் விளக்கம் இங்கே கிடைக்கும்.</p><div class="mini-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="loading-state" id="loadingState" hidden><div class="loader"></div><h4>AI ஒலியை ஆராய்கிறது...</h4><p>சத்தத்தின் pattern பரிசீலிக்கப்படுகிறது.</p></div>
+          <div class="result-content" id="resultContent" hidden>
+            <div class="result-badge"><span class="live-dot"></span> ANALYSIS COMPLETE</div>
+            <div class="result-text" id="resultText"></div>
+            <div class="result-actions"><button id="speakBtn" type="button">🔊 தமிழில் கேள்</button><button id="stopBtn" class="secondary-btn" type="button">■ நிறுத்து</button><button id="copyBtn" class="secondary-btn" type="button">⧉ Copy</button></div>
+            <p class="caution" id="cautionText"></p>
+          </div>
+          <div class="error-box" id="errorBox" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+      <div class="section-heading centered"><div class="eyebrow"><span class="eyebrow-line"></span> SIMPLE PROCESS</div><h2>How it <em>works</em></h2><p>மூன்று எளிய படிகளில் ஒலியிலிருந்து தமிழ் விளக்கம் வரை.</p></div>
+      <div class="process-grid">
+        <article class="process-card"><span class="process-number">01</span><div class="process-icon">🎙️</div><h3>Upload a sound</h3><p>நாய் அல்லது பூனையின் தெளிவான audio recording-ஐ upload செய்யுங்கள்.</p></article>
+        <article class="process-card"><span class="process-number">02</span><div class="process-icon">✦</div><h3>AI analyses audio</h3><p>AI ஒலியின் தன்மைகளை ஆராய்ந்து சாத்தியமான விளக்கத்தை உருவாக்கும்.</p></article>
+        <article class="process-card"><span class="process-number">03</span><div class="process-icon">அ</div><h3>Understand in Tamil</h3><p>விளக்கத்தைத் தமிழில் படிக்கவும் அல்லது voice playback மூலம் கேட்கவும்.</p></article>
+      </div>
+    </section>
+
+    <section class="science-note"><span class="science-symbol">ⓘ</span><div><b>Responsible AI note</b><p>விலங்குகளின் ஒலிகள் மனித மொழியில் நேரடி வார்த்தைகள் அல்ல. AnimalTalk AI ஒலி மற்றும் context அடிப்படையில் சாத்தியமான அர்த்தத்தை மட்டுமே கணிக்கிறது. இது உறுதியான மொழிபெயர்ப்பு அல்லது veterinary diagnosis அல்ல.</p></div></section>
+  </main>
+  <footer class="site-footer"><a class="brand footer-brand" href="#"><span class="brand-icon">A<span>✦</span></span><span class="brand-name">AnimalTalk <b>AI</b><small>ANIMAL SOUND INTELLIGENCE</small></span></a><span>BUILT FOR RESPONSIBLE ANIMAL UNDERSTANDING</span><a href="#home">Back to top ↑</a></footer>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    menuToggle?.addEventListener('click', () => document.querySelector('.main-nav')?.classList.toggle('nav-open'));
+    document.querySelectorAll('.main-nav a').forEach(a => a.addEventListener('click', () => document.querySelector('.main-nav')?.classList.remove('nav-open')));
+  </script>
+</body>
+</html>
